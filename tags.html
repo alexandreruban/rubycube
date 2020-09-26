@@ -1,0 +1,17 @@
+---
+layout: application
+meta_title: About
+permalink: /tags/
+---
+
+<h1>Tags</h1>
+
+<p>This is the Tag#index page</p>
+
+<ul>
+  {% for tag in site.tags %}
+    <li>
+      <a href="{{ tag.url }}">{{ tag.tag_name }}</a>
+    </li>
+  {% endfor %}
+</ul>

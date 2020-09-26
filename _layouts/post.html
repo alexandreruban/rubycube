@@ -1,0 +1,15 @@
+---
+layout: application
+---
+
+<h1>{{ page.title }}</h1>
+<p>{{ page.date | date_to_string }} - {{ page.author }}</p>
+
+{% for tag in page.tags %}
+  {% assign tag_object = site.tags | where: "tag_id", tag | first %}
+  <a href="{{ tag_object.url }}">
+    {{ tag_object.tag_name }}
+  </a>
+{% endfor %}
+
+{{ content }}
