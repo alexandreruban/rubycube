@@ -4,14 +4,15 @@ meta_title: About
 permalink: /tags/
 ---
 
-<h1>Tags</h1>
-
-<p>This is the Tag#index page</p>
-
-<ul>
-  {% for tag in site.tags %}
-    <li>
-      <a href="{{ tag.url }}">{{ tag.tag_name }}</a>
-    </li>
-  {% endfor %}
-</ul>
+<div class="flow">
+  <div class="hero">
+    <div class="hero__card content flow">
+      <h1 class="hero__title flow">
+        Tags
+      </h1>
+      <p>Here are all the available tags for Rubycube.dev</p>
+      {% include tags.html %}
+    </div>
+  </div>
+</div>
+{% include footer.html %}

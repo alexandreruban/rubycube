@@ -2,14 +2,25 @@
 layout: application
 ---
 
-<h1>{{ page.tag_name }}</h1>
+<div class="flow">
+  <div class="hero">
+    <div class="hero__card content flow">
+      <h1 class="hero__title flow">
+        {{ page.tag_name }}
+      </h1>
+      <p>
+        Browse all articles about {{ page.tag_name }}
+      </p>
+      {% include tags.html %}
+    </div>
+  </div>
 
-<ul>
-  {% for post in site.posts %}
-    {% if post.tags contains page.tag_id %}
-      <li>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-      </li>
-    {% endif %}
-  {% endfor %}
-</ul>
+  <div class="container content flow">
+    {% for post in site.posts %}
+      {% if post.tags contains page.tag_id %}
+        {% include article.html %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% include footer.html %}

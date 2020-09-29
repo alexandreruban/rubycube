@@ -1,0 +1,15 @@
+.icon {
+  display: flex;
+  align-items: center;
+
+  svg {
+    color: var(--color-accent);
+    height: 1em;
+    width: 1em;
+    margin-right: var(--space-xxs);
+  }
+
+  &--s {
+    font-size: var(--type-s);
+  }
+}

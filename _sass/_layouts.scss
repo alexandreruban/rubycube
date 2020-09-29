@@ -1,0 +1,32 @@
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 var(--space-m);
+  max-width: 62rem;
+}
+
+.content {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 70ch;
+}
+
+.cluster {
+  --cluster-space: calc(var(--space-s) / 2);
+
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(var(--cluster-space) * -1);
+
+  > * {
+    margin: var(--cluster-space);
+  }
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.stack-xl > * + * {
+  margin-top: var(--space-xl);
+}

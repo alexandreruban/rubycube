@@ -1,0 +1,14 @@
+<ul class="cluster">
+  <li>
+    <a href="{{ site.url }}" class="tag">
+      All articles
+    </a>
+  </li>
+  {% for tag in site.tags %}
+    <li>
+      <a href="{{ tag.url }}" class="tag tag--{{ tag.tag_id }}">
+        {{ tag.tag_name }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

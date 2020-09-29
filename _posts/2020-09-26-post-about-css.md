@@ -14,11 +14,23 @@ Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit number
 Jekyll also offers powerful support for code snippets:
 
 ```rb
-def print_hi(name)
-  puts "Hi, #{name}"
+def print_hi(name)class Admin::EventsController < Admin::BaseController
+  def index
+    @events = Event.all
+  end
+
+  private
+
+  def random
+    "#{string} string"
+  end
+
+  def string
+    return "Hello"
+  end
 end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
+
+# This is random code for design purposes
 ```
 
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].

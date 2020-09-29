@@ -2,14 +2,40 @@
 layout: application
 ---
 
-<h1>{{ page.title }}</h1>
-<p>{{ page.date | date_to_string }} - {{ page.author }}</p>
+<div class="flow">
+  <div class="hero">
+    <div class="hero__card content flow">
+      <h1 class="hero__title">
+        {{ page.title }}
+      </h1>
+      <div class="cluster">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          {{ page.date | date_to_string }}
+        </div>
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          5 minutes read
+        </div>
+      </div>
+      <div class="cluster">
+        <a href="{{ site.url }}" class="tag">All articles</a>
+        {% for tag in page.tags %}
+          {% assign tag_object = site.tags | where: "tag_id", tag | first %}
+          <a href="{{ tag_object.url }}" class="tag tag--{{ tag_object.tag_id }}">
+            {{ tag_object.tag_name }}
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 
-{% for tag in page.tags %}
-  {% assign tag_object = site.tags | where: "tag_id", tag | first %}
-  <a href="{{ tag_object.url }}">
-    {{ tag_object.tag_name }}
-  </a>
-{% endfor %}
-
-{{ content }}
+  <div class="container content stack-xl">
+    {{ content }}
+  </div>
+</div>
+{% include footer.html %}

@@ -1,0 +1,57 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: var(--type-m);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+a {
+  background-color: transparent;
+}
+
+main {
+  display: block;
+}
+
+img {
+  border-style: none;
+  display: block;
+  width: 100%;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
