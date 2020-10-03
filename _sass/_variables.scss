@@ -1,0 +1,54 @@
+:root {
+  // Spacings (fancy modular scale with calc)
+  --ratio: 1.5;
+  --space-xxxs: calc(var(--space-xxs) / var(--ratio));
+  --space-xxs: calc(var(--space-xs) / var(--ratio));
+  --space-xs: calc(var(--space-s) / var(--ratio));
+  --space-s: calc(var(--space-m) / var(--ratio));
+  --space-m: 1rem;
+  --space-l: calc(var(--space-m) * var(--ratio));
+  --space-xl: calc(var(--space-l) * var(--ratio));
+  --space-xxl: calc(var(--space-xl) * var(--ratio));
+  --space-xxxl: calc(var(--space-xxl) * var(--ratio));
+
+  // Font sizes (less fancy modular scale with intuition)
+  --type-xxxs: 55%;
+  --type-xxs: 65%;
+  --type-xs: 75%;
+  --type-s: 85%;
+  --type-m: calc(0.9rem + 0.3vw);
+  --type-l: 125%;
+  --type-xl: 150%;
+  --type-xxl: 200%;
+  --type-xxxl: 300%;
+
+  // Font family
+  --font-family--header:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-family--content: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  // Border radius
+  --border-radius-m: .5rem;
+
+  // Box shadow
+  --box-shadow: 8px 8px 0 var(--color-accent);
+  --box-shadow--editor: 0 0 1.5rem rgba(0, 0, 0, 0.2);
+
+  // Transitions
+  --transition: color ease 150ms;
+
+  // Line heights
+  --line-height--header: 1.2;
+  --line-height--content: 1.7;
+
+  // Colors
+  --color-header:    #212529;
+  --color-content:   #343140;
+  --color-dark:      #343A40;
+  --color-light:     #E9ECEF;
+  --color-primary:   #AEF0DD;
+  --color-accent:    #5426F8;
+  --color-background:#FFFFFF;
+  --color-css:       #004896;
+  --color-ruby:      #E20137;
+  --color-rails:     #BB0112;
+}

@@ -1,0 +1,39 @@
+html {
+  font-family: var(--font-family--content);
+  line-height: var(--line-height--content);
+  color: var(--color-content);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family--header);
+  line-height: var(--line-height--header);
+  color: var(--color-header);
+  margin: 0;
+}
+
+h2 {
+  font-size: var(--type-xxl);
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-accent);
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: 1px dashed var(--color-primary);
+    outline-offset: var(--space-xxxs);
+  }
+}

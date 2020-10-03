@@ -1,0 +1,25 @@
+---
+layout: application
+meta_title: Title of the blog
+---
+
+<div class="flow">
+  <div class="hero">
+    <div class="hero__card content flow">
+      <h1 class="hero__title">
+        Rubycube.dev
+      </h1>
+      <p class="text-center">
+        Let's talk about web developpment with Ruby on Rails and its ecosystem!
+      </p>
+      {% include tags.html %}
+    </div>
+  </div>
+
+  <div class="container content flow">
+    {% for post in site.posts %}
+      {% include article.html %}
+    {% endfor %}
+  </div>
+</div>
+{% include footer.html %}

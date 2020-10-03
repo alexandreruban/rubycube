@@ -1,0 +1,17 @@
+.article {
+  --flow-space: var(--space-xxl);
+
+  * {
+    --flow-space: var(--space-m);
+  }
+
+  &__link {
+    color: var(--color-header);
+    transition: var(--transition);
+
+    &:hover {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+  }
+}

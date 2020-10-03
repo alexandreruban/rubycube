@@ -1,0 +1,53 @@
+.editor {
+  background-color: #011627;
+  overflow-x: auto;
+  margin: 0 calc(var(--space-l) * -1);
+  border-radius: var(--space-s);
+  box-shadow: var(--box-shadow--editor);
+
+  code {
+    padding: var(--space-l);
+    overflow-x: auto;
+    display: block;
+    font-family: "Menlo", "Monaco", monospace;
+    font-size: var(--type-s);
+    line-height: 1.5;
+  }
+
+  .si {
+    color: #ec5f67;
+  }
+
+  .n, .p {
+    color: white;
+  }
+
+  .c1 {
+    color: #637777;
+  }
+
+  .k {
+    color: #c792ea;
+  }
+
+  .nc, .s2 {
+    color: #ffcb8b;;
+  }
+
+  .ss {
+    color: #7fdbca;
+  }
+
+  .kp, .vi {
+    color: #7fdbca;
+  }
+
+  .nf {
+    color: #82aaff;
+    font-style: italic;
+  }
+
+  .o, .no {
+    color: #addb67;
+  }
+}

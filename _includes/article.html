@@ -1,0 +1,32 @@
+<article class="article flow">
+  <h2>
+    <a class="article__link" href="{{ post.url }}">
+      {{ post.title }}
+    </a>
+  </h2>
+  <div class="cluster">
+    <div class="icon icon--s">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+      </svg>
+      {{ post.date | date_to_string }}
+    </div>
+    <div class="icon icon--s">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      5 minutes read
+    </div>
+  </div>
+  <p class="article__excerpt">
+    {{ post.excerpt }}
+  </p>
+  <div class="cluster">
+    {% for tag in post.tags %}
+      {% assign tag_object = site.tags | where: "tag_id", tag | first %}
+      <a class="tag tag--{{ tag_object.tag_id }}" href="{{ tag_object.url }}">
+        {{ tag_object.tag_name }}
+      </a>
+    {% endfor %}
+  </div>
+</article>

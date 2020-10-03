@@ -1,0 +1,38 @@
+.tag {
+  display: inline-block;
+  line-height: var(--line-height--header);
+  padding: var(--space-xxs) var(--space-xs);
+  color: var(--color-header);
+  border-radius: var(--border-radius-m);
+  transition: var(--transition);
+  font-size: var(--type-xs);
+  border-style: solid;
+  border-width: 1px;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::before {
+    content: "#";
+  }
+
+  &--css {
+    color: var(--color-css);
+    border-color: var(--color-css);
+  }
+
+  &--ruby {
+    color: var(--color-ruby);
+    border-color: var(--color-ruby);
+  }
+
+  &--rails {
+    color: var(--color-rails);
+    border-color: var(--color-rails);
+  }
+}
