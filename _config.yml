@@ -19,12 +19,25 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Rubycube.dev
+tagline: Blogging about Ruby, Ruby on Rails, Javascript and CSS.
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Learn more about Ruby, Ruby on Rails with sprinkles of Javascript and beautifully written CSS.
+  In this blog, I will write about how to become a better Rails developper.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.rubycube.dev" # the base hostname & protocol for your site, e.g. http://example.com
+logo: /assets/images/logo.png
+author:
+  twitter: alexandre_ruban
+twitter:
+  username: alexandre_ruban
+  card: summary
+social:
+  name: Alexandre Ruban
+  links:
+    - https://twitter.com/alexandre_ruban
+    - https://github.com/alexandreruban
+    - https://www.linkedin.com/in/alexandre-ruban-0255b189/
+permalink: "blog/:title.html"
 twitter_username: alexandre_ruban
 github_username:  alexandreruban
 port: 3000
@@ -50,7 +63,8 @@ defaults:
     values:
       layout: "application"
 plugins:
-  - jekyll-feed
+  - jekyll-seo-tag
+#   - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
