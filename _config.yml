@@ -53,15 +53,18 @@ defaults:
       type: "tags"
     values:
       layout: "tag"
+      image: /assets/images/twitter-card.png
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
+      image: /assets/images/twitter-card.png
   - scope:
       path: ""
     values:
       layout: "application"
+      image: /assets/images/twitter-card.png
 plugins:
   - jekyll-seo-tag
 #   - jekyll-feed
