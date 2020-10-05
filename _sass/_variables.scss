@@ -5,7 +5,7 @@
   --space-xxs: calc(var(--space-xs) / var(--ratio));
   --space-xs: calc(var(--space-s) / var(--ratio));
   --space-s: calc(var(--space-m) / var(--ratio));
-  --space-m: 1rem;
+  --space-m: 1em;
   --space-l: calc(var(--space-m) * var(--ratio));
   --space-xl: calc(var(--space-l) * var(--ratio));
   --space-xxl: calc(var(--space-xl) * var(--ratio));
@@ -47,6 +47,7 @@
   --color-light:     #E9ECEF;
   --color-primary:   #AEF0DD;
   --color-accent:    #5426F8;
+  --color-highlight: #ddf9f1;
   --color-background:#FFFFFF;
   --color-css:       #004896;
   --color-ruby:      #E20137;

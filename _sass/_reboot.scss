@@ -49,9 +49,5 @@ select {
 }
 
 ul {
-  padding: 0;
-}
-
-li {
-  list-style: none;
+  padding: var(--space-m);
 }

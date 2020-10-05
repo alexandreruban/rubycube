@@ -24,9 +24,15 @@
 }
 
 .flow > * + * {
-  margin-top: var(--flow-space, 1rem);
+  margin-top: var(--flow-space, 1em);
 }
 
-.stack-xl > * + * {
-  margin-top: var(--space-xl);
+.stack-l > * + * {
+  margin-top: var(--space-l);
+}
+
+.gif {
+  max-width: 25rem;
+  margin-right: auto;
+  margin-left: auto;
 }
