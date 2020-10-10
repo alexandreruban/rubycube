@@ -12,17 +12,18 @@
     font-family: "Menlo", "Monaco", monospace;
     font-size: var(--type-s);
     line-height: 1.5;
+    color: #FFFFFF;
   }
 
-  .si {
+  .si, .nt {
     color: #ec5f67;
   }
 
   .n, .p {
-    color: white;
+    color: #FFFFFF;
   }
 
-  .c1 {
+  .c1, .c {
     color: #637777;
   }
 
@@ -30,15 +31,11 @@
     color: #c792ea;
   }
 
-  .nc, .s2 {
+  .nc, .s, .s1, .s2, .m {
     color: #ffcb8b;;
   }
 
-  .ss {
-    color: #7fdbca;
-  }
-
-  .kp, .vi {
+  .kp, .vi, .nb, .ss, .nl {
     color: #7fdbca;
   }
 
@@ -47,7 +44,7 @@
     font-style: italic;
   }
 
-  .o, .no {
+  .o, .no, .nd, .na, .py {
     color: #addb67;
   }
 }
