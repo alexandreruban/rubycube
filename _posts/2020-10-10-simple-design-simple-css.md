@@ -6,13 +6,13 @@ minutes_read: 15
 tags: css
 ---
 
-A few weeks ago, I came accross [this article][signal-v-noise-article] from the Basecamp team explaining how they achieve *"simple design"* in both their products Basecamp and Hey. They mention what they call "Fisher Price" design (always choosing clarity over being slick or fancy). I am a big fan and user of both Basecamp and Hey. I love how simple and straight to the point both products are and I kept wondering what the impacts on the CSS and HTML code are. Let's have a look!
+A few weeks ago, I came across [this article][signal-v-noise-article] from the Basecamp team explaining how they achieve *"simple design"* in both their products Basecamp and Hey. They mention what they call "Fisher Price" design (always choosing clarity over being slick or fancy). I am a big fan and user of both Basecamp and Hey. I love how simple and straight to the point both products are and I kept wondering what the impacts on the CSS and HTML code are. Let's have a look!
 
 To prepare this article, I rebuilt the ["How it works"][hey-how-it-works] page of Hey's marketing website. Here is what I learned.
 
 ## You need fewer variables
 
-If you use open source CSS libraries like Bootstrap in some of your web projects, then you know what a huge scss variables file looks like. If you have a look at the [variables file of Bootstrap][bootstrap-variables] you will notice that this file alone is about 1300 lines long! This is a huge amount of work compared to the 50 variables extracted from the Hey souce code. If you are working with a small team and want to build a custom design rebuilding a Bootstrap like design system will probably take you ages.
+If you use open source CSS libraries like Bootstrap in some of your web projects, then you know what a huge scss variables file looks like. If you have a look at the [variables file of Bootstrap][bootstrap-variables] you will notice that this file alone is about 1300 lines long! This is a huge amount of work compared to the 50 variables extracted from the Hey source code. If you are working with a small team and want to build a custom design rebuilding a Bootstrap like design system will probably take you ages.
 
 Let's have a closer look at the Hey variables:
 
@@ -92,7 +92,7 @@ Out of 50 variables, 30 correspond to the colors of the palette, 2 correspond to
 
 There are two more interesting things in this variable file:
 
-First, they use a responsive font size. The document font size is set to `10px` in the `html`tag (so 1 rem is always 10px) and then overriden to `var(--type-base)` in the `body` tag. Having a closer look at the `--type-base` variable, we can notice that it is set to `calc(1.6em + 0.5vw)` which means 1.6 \* 10px + 0.5% of the viewport width. This means that the font size will scale with the viewport width and so the `em` also scales with it. In other words, the font size on smaller screen will be smaller than on bigger screens. The font size is changed with media queries for the two breakpoints `45em` and `91em` globally by overriding the `--type-base`variable.
+First, they use a responsive font size. The document font size is set to `10px` in the `html` tag (so 1 rem is always 10px) and then overriden to `var(--type-base)` in the `body` tag. Having a closer look at the `--type-base` variable, we can notice that it is set to `calc(1.6em + 0.5vw)` which means 1.6 \* 10px + 0.5% of the viewport width. This means that the font size will scale with the viewport width and so the `em` also scales with it. In other words, the font size on smaller screen will be smaller than on bigger screens. The font size is changed with media queries for the two breakpoints `45em` and `91em` globally by overriding the `--type-base` variable.
 
 ```css
 @media (min-width: 45em) {
@@ -126,11 +126,11 @@ Now that we have our set of variables in place let's talk about the layout. Hey 
 }
 ```
 
-These 2 lines of code above divides the screen into 7 columns. The 8 lines that divides those 7 columns are named in order `max`, `l`, `m`, `m`, `m`, `m`, `l` and `max` thanks to the `[]` notation (otherwise they would simply be numbered 1 to 8). Out of those 7 columns, 4 of them have a width of `1fr`and the 3 center columns have a width of `28vw`. The `fr` unit stands for *fraction* and it really means a fraction of the available space. The `vw`unit means 1% of the viewport width. If we go further here, the 3 columns in the center will each take `28vw` for a total of `84vw`. There are `100vw` available (100% of the viewport width) so `16vw`to split in 4 fractions means that each fraction is 4% of the viewport width! If this feels a bit complicated, it is illustrated in the picture bellow:
+These 2 lines of code above divides the screen into 7 columns. The 8 lines that divides those 7 columns are named in order `max`, `l`, `m`, `m`, `m`, `m`, `l` and `max` thanks to the `[]` notation (otherwise they would simply be numbered 1 to 8). Out of those 7 columns, 4 of them have a width of `1fr` and the 3 center columns have a width of `28vw`. The `fr` unit stands for *fraction* and it really means a fraction of the available space. The `vw` unit means 1% of the viewport width. If we go further here, the 3 columns in the center will each take `28vw` for a total of `84vw`. There are `100vw` available (100% of the viewport width) so `16vw` to split in 4 fractions means that each fraction is 4% of the viewport width! If this feels a bit complicated, it is illustrated in the picture bellow:
 
 ![hey.com CSS grid](/assets/images/grid.png)
 
-The sizes of those 7 columns are overriden for the two breakpoints `45em` and `91em`as shown bellow.
+The sizes of those 7 columns are overriden for the two breakpoints `45em` and `91em` as shown bellow.
 
 ```css
 @media(min-width: 45em) {
@@ -156,11 +156,11 @@ The sizes of those 7 columns are overriden for the two breakpoints `45em` and `9
 }
 ```
 
-The most important thing to learn here is this `minmax`function. Here `minmax(11ch, 0.7fr)`simply means that the column width can shrink until it reaches a width of `11ch` otherwise it will have a width of `0.7fr`. Easy right? This minmax notation is widely used with CSS grid!
+The most important thing to learn here is this `minmax` function. Here `minmax(11ch, 0.7fr)` simply means that the column width can shrink until it reaches a width of `11ch` otherwise it will have a width of `0.7fr`. Easy right? This minmax notation is widely used with CSS grid!
 
 We can also learn about 1 more spacing unit called `ch` which corresponds to the width of the zero character (0) in the current font size. It is usually used for paragraph widths as paragraphs are considered very readable at about `70ch` width. This is what I use for this blog!
 
-Now that we have our 7 columns layout, its time to define CSS classes to fill those columns.
+Now that we have our 7 columns layout, it's time to define CSS classes to fill those columns.
 
 ```css
 .grid__max {
@@ -180,19 +180,19 @@ Now that we have our 7 columns layout, its time to define CSS classes to fill th
 }
 ```
 
-In a grid layout, the element that defines the columns with the property `grid-template-columns`is called the grid container. It's direct descendants are called the grid items and their place on the grid is determined by the property `grid-column`.
+In a grid layout, the element that defines the columns with the property `grid-template-columns` is called the grid container. Its direct descendants are called the grid items and their place on the grid is determined by the property `grid-column`.
 
 The first class `.grid__max` means that the element it is applied to will fill the space from the first grid column named `max` to the second grid column named `max`. If you have a look at the picture of the grid above this basically means the whole width of the grid container.
 
-The same thing applies for the `.grid__wide`class as the element it is applied to will fill the space from the first grid column named `l`to the second grid column named `l`. In the picture above, you can see that the hero picture received this `.grid__wide` class.
+The same thing applies for the `.grid__wide` class as the element it is applied to will fill the space from the first grid column named `l` to the second grid column named `l`. In the picture above, you can see that the hero picture received this `.grid__wide` class.
 
 Last but not least, the elements with `.grid__medium` class will fill the space from the first grid column named `m` to the fourth grid column named `m`. That's the 3 center columns of the grid and if you have a look at the picture again, this is where the text lives.
 
-Does it mean that we need to specify `.grid__max`, `.grid__wide`or `.grid__medium`on every single direct descendant of the grid container? No! Thanks to the last selector `.grid > :not([class*="grid"])` if a direct descendent of the grid container (a grid item) has no class that contains the string `grid`it will act like a `.grid__medium`by default! Neat!
+Does it mean that we need to specify `.grid__max`, `.grid__wide` or `.grid__medium` on every single direct descendant of the grid container? No! Thanks to the last selector `.grid > :not([class*="grid"])` if a direct descendent of the grid container (a grid item) has no class that contains the string `grid` it will act like a `.grid__medium` by default! Neat!
 
 If you visit [hey.com][hey-website] you will realise that with this set of variables, and this layout in place, almost all of the heavy lifting is already done. This is a very good example of "simple design".
 
-Note that the grid is not completely supported on Internet Explorer. The Hey team wants to use grid on their site, so they will "force" users to upgrade to a more recent browser using the media query `@supports (display: grid)`. Let's have a look a t how they do it:
+Note that the grid is not completely supported on Internet Explorer. The Hey team wants to use grid on their site, so they will "force" users to upgrade to a more recent browser using the media query `@supports (display: grid)`. Let's have a look at how they do it:
 
 ```html
 <div class="unsupported">
@@ -211,7 +211,7 @@ Note that the grid is not completely supported on Internet Explorer. The Hey tea
 </div>
 ```
 
-First, they add HTML markup to suggest that the user upgrades his browser to a newser version.
+First, they add HTML markup to suggest that the user upgrades his browser to a newer version.
 
 ```css
 .unsupported {
@@ -246,7 +246,7 @@ Then they add css to make this suggestion visible only to users that does not su
 
 ## Use BEM or another convention
 
-CSS is often a misunderstood language. There is a lot to learn and it can become a real mess very quicky it you don't have clear rules about what should go where. The Basecamp team uses the [BEM methodology][bem-website] to organise CSS code. Let's have a look at how BEM methodology helps you organise your code by redesigining those boxes.
+CSS is often a misunderstood language. There is a lot to learn and it can become a real mess very quickly it you don't have clear rules about what should go where. The Basecamp team uses the [BEM methodology][bem-website] to organise CSS code. Let's have a look at how BEM methodology helps you organise your code by redesigning those boxes.
 
 ![How it works boxes](/assets/images/hiw-boxes.png)
 
@@ -286,7 +286,7 @@ First let's have a look at the corresponding HTML (notice the `.grid__wide` from
 </section>
 ```
 
-Did you notice the strucutre? `hiw-box`is the name of the block. It represents the whole card. Then `hiw-box__copy` and `hiw-box__image` are elements of this block. They are prefixed with the name of the block to prevent naming conflicts in CSS. The block name and the element name are separated with a double underscore. Finally `hiw-box--blurple` and `hiw-box--reverse`are called modifiers. They are also prefixed by the name of the block. The block name and the element name are separated with a double "-". Et voilà, you know almost all there is to know about BEM methodology.
+Did you notice the structure? `hiw-box` is the name of the block. It represents the whole card. Then `hiw-box__copy` and `hiw-box__image` are elements of this block. They are prefixed with the name of the block to prevent naming conflicts in CSS. The block name and the element name are separated with a double underscore. Finally `hiw-box--blurple` and `hiw-box--reverse` are called modifiers. They are also prefixed by the name of the block. The block name and the element name are separated with a double "-". Et voilà, you know almost all there is to know about BEM methodology.
 
 Let's have a look at the corresponding CSS:
 
@@ -355,7 +355,7 @@ Do you see how easy it is to read? BEM makes the HTML markup very readable and, 
 
 ## Use the full power of CSS to write less code
 
-Remember when I said spacing should be in ems? Now is the time to explain why a bit more in depth. If you have a closer look at [hey.com][hey-website], you will realize that buttons have many different sizes. However in the source code, you'll find only one `.button` class.
+Remember when I said spacing should be in ems? Now is the time to explain why a bit more in depth. If you have a closer look at [hey.com][hey-website], you will realize that buttons have many different sizes. However in the source code, you'll find only one `.button` class
 
 ```css
 .button {
@@ -476,7 +476,7 @@ Next, we created the inner container in the navigation bar. It's a flex containe
 
 @media (max-width: 44.99em) {
   /* They are also stacked vertically */
-  /* Links are absolutely politionned outside of the screen */
+  /* Links are absolutely positioned outside of the screen */
   .header__links {
     position:absolute;
     top: 8rem;
@@ -490,7 +490,7 @@ Next, we created the inner container in the navigation bar. It's a flex containe
     -webkit-overflow-scrolling: touch;
   }
 
-  /* Creates the white backdrop when the navbar is opened */
+  /* Creates the white backdrop when the navigation bar is opened */
   .header__links::after {
     transition: opacity 0.15s ease-in-out;
     content: '';
@@ -507,7 +507,7 @@ Next, we created the inner container in the navigation bar. It's a flex containe
 }
 ```
 
-On a large screen, the wrapper arround the navigation links is just a simple block.
+On a large screen, the wrapper around the navigation links is just a simple block.
 
 On smaller screens, on the other hand, the header links are stacked vertically thanks to `display: flex;` and `flex-direction: column;` and aligned to the right thanks to `align-items: flex-end;`. They are also in `position: absolute;` relatively to the closest parent with `position: relative;` which in this case is the `.header__nav` element. This allows to position those links at 8rem from the top and -25rem from the right (that's outside the screen!). We'll see soon how checking the checkbox can animate those links so that they move inside the screen.
 
@@ -619,7 +619,7 @@ I had a lot of fun digging into [hey.com][hey-website] marketing website. Here a
 - You do not need complex layouts to sell your product. A simple design and good copywriting will be more effective than "the three column layout".
 - Using a simple methodology like [BEM][bem-website] makes it really easy to organise CSS and makes your HTML markup readable.
 - You can build amazing animations with CSS alone. You might not need Javascript for everything.
-- The Basecamp's team approch is a great inspiration for small teams and show how to leverage the full power of CSS's features to write very little code.
+- The Basecamp's team approach is a great inspiration for small teams and show how to leverage the full power of CSS's features to write very little code.
 
 [signal-v-noise-article]: https://m.signalvnoise.com/how-we-achieve-simple-design-for-basecamp-and-hey/#comments
 [hey-how-it-works]: https://hey.com/how-it-works/
