@@ -37,7 +37,7 @@ social:
     - https://twitter.com/alexandre_ruban
     - https://github.com/alexandreruban
     - https://www.linkedin.com/in/alexandre-ruban-0255b189/
-permalink: "blog/:title.html"
+permalink: "blog/:title"
 twitter_username: alexandre_ruban
 github_username:  alexandreruban
 port: 3000
