@@ -1,0 +1,21 @@
+.toggle-theme {
+  position: absolute;
+  width: var(--space-xl);
+  height: var(--space-xl);
+  right: var(--space-xl);
+  top: var(--space-xl);
+  padding: 0;
+  color: var(--color-content);
+  background-color: var(--color-bg);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+[data-theme="light"] .toggle-theme__sun {
+  display: none;
+}
+
+:root:not([data-theme="light"]) .toggle-theme__moon {
+  display: none;
+}

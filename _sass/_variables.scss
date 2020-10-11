@@ -34,7 +34,7 @@
   --box-shadow--editor: 0 0 1.5rem rgba(0, 0, 0, 0.2);
 
   // Transitions
-  --transition: color ease 150ms;
+  --transition: ease 150ms;
 
   // Line heights
   --line-height--header: 1.2;
@@ -55,7 +55,7 @@
 
 // Override colors to create a dark mode :))))
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --color-header:    #f8f9fa;
     --color-content:   #e9ecef;
     --color-light:     #212529;
