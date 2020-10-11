@@ -34,7 +34,7 @@
   --box-shadow--editor: 0 0 1.5rem rgba(0, 0, 0, 0.2);
 
   // Transitions
-  --transition: color ease 150ms;
+  --transition: ease 150ms;
 
   // Line heights
   --line-height--header: 1.2;
@@ -43,7 +43,6 @@
   // Colors
   --color-header:    #212529;
   --color-content:   #343140;
-  --color-dark:      #343A40;
   --color-light:     #E9ECEF;
   --color-primary:   #AEF0DD;
   --color-accent:    #5426F8;
@@ -52,4 +51,20 @@
   --color-css:       #004896;
   --color-ruby:      #E20137;
   --color-rails:     #BB0112;
+}
+
+// Override colors to create a dark mode :))))
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-header:    #f8f9fa;
+    --color-content:   #e9ecef;
+    --color-light:     #212529;
+    --color-primary:   #237164;
+    --color-accent:    #b29cff;
+    --color-highlight: #030e0b;
+    --color-background:#212a30;
+    --color-css:       #88a5c5;
+    --color-ruby:      #E20137;
+    --color-rails:     #BB0112;
+  }
 }

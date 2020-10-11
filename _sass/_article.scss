@@ -7,7 +7,7 @@
 
   &__link {
     color: var(--color-header);
-    transition: var(--transition);
+    transition: color var(--transition);
 
     &:hover {
       color: var(--color-accent);

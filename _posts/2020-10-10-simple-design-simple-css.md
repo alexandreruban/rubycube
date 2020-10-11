@@ -12,7 +12,7 @@ To prepare this article, I rebuilt the ["How it works"][hey-how-it-works] page o
 
 ## You need fewer variables
 
-If you use open source CSS libraries like Bootstrap in some of your web projects, then you know what a huge scss variables file looks like. If you have a look at the [variables file of Bootstrap][bootstrap-variables] you will notice that this file alone is about 1300 lines long! This is a huge amount of work compared to the 50 variables extracted from the Hey source code. If you are working with a small team and want to build a custom design rebuilding a Bootstrap like design system will probably take you ages.
+If you use open source CSS libraries like Bootstrap in some of your web projects, then you know what a huge scss variables file looks like. If you have a look at the [variables file of Bootstrap][bootstrap-variables] you will notice that this file alone is about 1300 lines long! This is a huge amount of work compared to the 50 variables extracted from the Hey source code. If you are working with a small team and want to build a custom design, rebuilding a Bootstrap like design system will probably take you ages.
 
 Let's have a closer look at the Hey variables:
 
