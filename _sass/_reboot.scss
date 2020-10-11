@@ -10,6 +10,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--color-background);
 }
 
 code,
@@ -36,6 +37,7 @@ img {
   border-style: none;
   display: block;
   width: 100%;
+  border-radius: var(--space-s);
 }
 
 button,
