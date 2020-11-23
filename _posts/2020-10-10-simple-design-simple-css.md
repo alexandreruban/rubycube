@@ -112,7 +112,7 @@ Second, the unit of the spaces variables is `em` and not `rem`. This means that 
 
 ## You need a simpler layout
 
-Now that we have our set of variables in place let's talk about the layout. Hey uses CSS grid to create a *really simple* layout. If you're not familiar with CSS grid, now is the time to learn it's powers! (Note that the indentation of the grid-template-columns property is only there for readability purposes on this blog but is not required).
+Now that we have our set of variables in place let's talk about the layout. Hey uses CSS grid to create a *really simple* layout. If you're not familiar with CSS grid, now is the time to learn its powers! (Note that the indentation of the grid-template-columns property is only there for readability purposes on this blog but is not required).
 
 ```css
 .grid {
@@ -286,7 +286,7 @@ First let's have a look at the corresponding HTML (notice the `.grid__wide` from
 </section>
 ```
 
-Did you notice the structure? `hiw-box` is the name of the block. It represents the whole card. Then `hiw-box__copy` and `hiw-box__image` are elements of this block. They are prefixed with the name of the block to prevent naming conflicts in CSS. The block name and the element name are separated with a double underscore. Finally `hiw-box--blurple` and `hiw-box--reverse` are called modifiers. They are also prefixed by the name of the block. The block name and the element name are separated with a double "-". Et voilà, you know almost all there is to know about BEM methodology.
+Did you notice the structure? `hiw-box` is the name of the block. It represents the whole card. Then `hiw-box__copy` and `hiw-box__image` are elements of this block. They are prefixed with the name of the block to prevent naming conflicts in CSS. The block name and the element name are separated with a double underscore. Finally `hiw-box--blurple` and `hiw-box--reverse` are called modifiers. They are also prefixed by the name of the block. The block name and the modifier name are separated with a double "-". Et voilà, you know almost all there is to know about BEM methodology.
 
 Let's have a look at the corresponding CSS:
 
