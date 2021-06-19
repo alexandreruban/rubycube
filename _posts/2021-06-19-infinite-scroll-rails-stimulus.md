@@ -364,7 +364,7 @@ export default class extends Controller {
     this.getNextPage()
 
     await delay(500) // Wait for 500 ms
-    this.observeNextPagelink() // repeat the whole process!
+    this.observeNextPageLink() // repeat the whole process!
   }
 
   async getNextPage() {
