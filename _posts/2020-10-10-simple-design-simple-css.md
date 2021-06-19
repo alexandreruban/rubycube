@@ -250,7 +250,7 @@ CSS is often a misunderstood language. There is a lot to learn and it can become
 
 ![How it works boxes](/assets/images/hiw-boxes.png)
 
-First let's have a look at the corresponding HTML (notice the `.grid__wide` from previous paragraph!):
+First, let's have a look at the corresponding HTML (notice the `.grid__wide` from previous paragraph!):
 
 ```html
 <section class="hiw-box grid__wide">
