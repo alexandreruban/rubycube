@@ -213,7 +213,7 @@ export default class extends Controller {
   // private
 
   async observeNextPageLink() {
-    if (!this.nextPageLinkTarget) return
+    if (!this.hasNextPageLinkTarget) return
 
     await nextIntersection(this.nextPageLinkTarget)
     console.log("intersection")
@@ -251,7 +251,7 @@ The function `observeNextPageLink` is asynchronous for this reason. See how it r
 
 ```js
 async observeNextPageLink() {
-  if (!this.nextPageLinkTarget) return
+  if (!this.hasNextPageLinkTarget) return
 
   await nextIntersection(this.nextPageLinkTarget)
   console.log("intersection")
@@ -298,7 +298,7 @@ export default class extends Controller {
   }
 
   async observeNextPageLink() {
-    if (!this.nextPageLinkTarget) return
+    if (!this.hasNextPageLinkTarget) return
 
     await nextIntersection(this.nextPageLinkTarget)
     this.getNextPage()
@@ -358,7 +358,7 @@ export default class extends Controller {
   }
 
   async observeNextPageLink() {
-    if (!this.nextPageLinkTarget) return
+    if (!this.hasNextPageLinkTarget) return
 
     await nextIntersection(this.nextPageLinkTarget)
     this.getNextPage()
