@@ -270,7 +270,7 @@ With the `Factory` and `Attribute` classes we just coded, we could define a fact
 ```rb
 factory = TinyFactory::Factory.new(:user)
 factory.add_attribute(:first_name, Proc.new { "Alexandre" })
-factory.add_attribute(:last_name,  Proc.new { "Alexandre" })
+factory.add_attribute(:last_name,  Proc.new { "Ruban" })
 factory.add_attribute(:email,      Proc.new { "#{first_name}@hey.com".downcase })
 ```
 
@@ -349,7 +349,7 @@ What we want is to make those two syntax equivalent:
 
 ```rb
 factory.add_attribute(:email) { "#{first_name}@hey.com".downcase }
-factory.first_name { "#{first_name}@hey.com".downcase }
+factory.email { "#{first_name}@hey.com".downcase }
 ```
 
 This can be achieved with `#method_missing` like this:
