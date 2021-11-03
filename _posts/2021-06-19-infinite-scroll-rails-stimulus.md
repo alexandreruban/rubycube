@@ -1,6 +1,6 @@
 ---
 title: Infinite scroll pagination with Rails and Stimulus
-description: This description will be used in the meta tags
+description: Let's build an infinite scroll pagination with the GearedPagination gem and Stimulus with only a few lines of code
 date: 2021-06-19
 minutes_read: 10
 tags: [rails, javascript]

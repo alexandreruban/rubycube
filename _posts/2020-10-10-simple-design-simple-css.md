@@ -1,6 +1,6 @@
 ---
 title: Achieving simple design with simple CSS
-description: This description will be used in the meta tags
+description: In this article, we will explore how the Basecamp team writes simple CSS in their brand new product hey.com
 date: 2020-10-10
 minutes_read: 15
 tags: css

@@ -1,6 +1,6 @@
 ---
 title: Rebuilding FactoryBot in 150 lines of code
-description: This description will be used in the meta tags
+description: Let's build a FactoryBot clone. We will learn about creating a new gem, adding tests and how FactoryBot internals work
 date: 2021-06-19
 minutes_read: 20
 tags: [ruby, rails]
