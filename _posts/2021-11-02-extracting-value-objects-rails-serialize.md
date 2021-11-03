@@ -6,9 +6,9 @@ minutes_read: 6
 tags: [ruby, rails]
 ---
 
-## Identifying value objects in Rails
-
 As Ruby on Rails developers, we tend to add too much code in the same `ActiveRecord model`. Very often, this is because we fail to identify new objects. This article aims to present a concrete method to keep our `ActiveRecord` models sizes under control thanks to the [serialize method](https://github.com/rails/rails/blob/main/activerecord/lib/active_record/attribute_methods/serialization.rb).
+
+## Identifying value objects in Rails
 
 Let's take a concrete example. Imagine that we are working on an invoicing system, each invoice being composed of multiple line items. Our Invoice model would look like this:
 
