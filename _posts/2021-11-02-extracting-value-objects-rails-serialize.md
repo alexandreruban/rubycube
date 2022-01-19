@@ -6,7 +6,7 @@ minutes_read: 6
 tags: [ruby, rails]
 ---
 
-As Ruby on Rails developers, we tend to add too much code in the same `ActiveRecord model`. Very often, this is because we fail to identify new objects. This article aims to present a concrete method to keep our `ActiveRecord` models sizes under control thanks to the [serialize method](https://github.com/rails/rails/blob/main/activerecord/lib/active_record/attribute_methods/serialization.rb).
+As Ruby on Rails developers, we tend to add too much code in the same `ActiveRecord` model. Very often, this is because we fail to identify new objects. This article presents a concrete tool that helps keep our `ActiveRecord` models sizes under control thanks to the [serialize method](https://github.com/rails/rails/blob/main/activerecord/lib/active_record/attribute_methods/serialization.rb).
 
 ## Identifying value objects in Rails
 
@@ -193,7 +193,6 @@ line_item.tax_code
 => <TaxCode:0x00007fd0c6316728 @key=:vat_20>
 ```
 
-The final implementation
 That was a lot of work! Let's look at the final implementation of the `LineItem` model:
 
 ```rb
